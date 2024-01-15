@@ -1,0 +1,15 @@
+netsh advfirewall export "c:\FirewallRules.wfw"
+
+netsh advfirewall import "c:\FirewallRules.wfw"
+
+
+restart services 
+net stop MpsSvc
+net start MpsSvc
+
+
+
+Run
+RegEdit
+Computer\HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\SharedAccess\Parameters\FirewallPolicy\FirewallRules
+export
